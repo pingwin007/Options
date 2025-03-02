@@ -8,6 +8,15 @@ black_scholes <- function(S, K, T, r, sigma, type = "call") {
   d1 <- (log(S/K) + (r + 0.5 * sigma^2) * T) / (sigma * sqrt(T))
   d2 <- d1 - sigma * sqrt(T)
   
+  d_my_check_boolean <- 0
+  
+  if (d_my_check_boolean == 0){
+    
+    print("execution warning")
+    
+  }
+  
+  
   # Compute option price
   if (type == "call") {
     price <- S * pnorm(d1) - K * exp(-r * T) * pnorm(d2)
